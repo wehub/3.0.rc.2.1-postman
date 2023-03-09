@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "44cefd42-ebfb-4723-b6a3-060f39896cdb",
+		"name": "3.0.rc.2.1 Latest",
+		"description": "Use WePay's APIs to integrate with [Link](/link), [Clear](/clear), or [Core](/core), and to leverage feature offerings like [Digital Wallets](/digital-wallets) and [Card Present](/card-present).\n\nContact Support:\n Name: WePay API Support\n Email: api@wepay.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "1968246-44cefd42-ebfb-4723-b6a3-060f39896cdb"
+	},
+	"item": [
+		{
+			"name": "Create a payment method",
+			"id": "5449164c-72ad-4cd6-a9de-1830a69f636a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "(Required) ",
+						"key": "Api-Version",
+						"value": "3.0"
+					},
+					{
+						"key": "Unique-Key",
+						"value": "eu quis consequat"
+					},
+					{
+						"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+						"key": "WePay-Risk-Token",
+						"value": "eu quis consequat"
+					},
+					{
+						"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+						"key": "Client-IP",
+						"value": "eu quis consequat"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"google_pay\": {\n    \"payment_method_data\": \"fjwfhkdjsfjkdsnfj\",\n    \"card_holder\": {\n      \"address\": {\n        \"country\": \"US\",\n        \"postal_code\": \"94025\"\n      },\n      \"email\": \"example@wepay.com\",\n      \"holder_name\": \"John Snow\"\n    }\n  },\n  \"custom_data\": {\n    \"my_key\": \"invoice #54321\"\n  },\n  \"type\": \"google_pay\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/payment_methods",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"payment_methods"
+					]
+				},
+				"description": "The POST /payment_methods call allows your platform to create a payment method. Payment methods represent payment data like credit cards and bank accounts, and allow your platform to charge and accept money from a payer."
+			},
+			"response": [
+				{
+					"id": "a57e3722-ca81-4a49-ae68-9f408835b660",
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "Api-Version",
+								"value": "3.0"
+							},
+							{
+								"key": "Unique-Key",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "WePay-Risk-Token",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "Client-IP",
+								"value": "eu quis consequat"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"google_pay\": {\n    \"payment_method_data\": \"fjwfhkdjsfjkdsnfj\",\n    \"card_holder\": {\n      \"address\": {\n        \"country\": \"US\",\n        \"postal_code\": \"94025\"\n      },\n      \"email\": \"example@wepay.com\",\n      \"holder_name\": \"John Snow\"\n    }\n  },\n  \"custom_data\": {\n    \"my_key\": \"invoice #54321\"\n  },\n  \"type\": \"google_pay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/payment_methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payment_methods"
+							]
+						},
+						"description": "The POST /payment_methods call allows your platform to create a payment method. Payment methods represent payment data like credit cards and bank accounts, and allow your platform to charge and accept money from a payer."
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"id\": \"<string>\",\n  \"resource\": \"<string>\",\n  \"path\": \"<string>\",\n  \"owner\": {\n    \"resource\": \"<string>\",\n    \"id\": \"<string>\",\n    \"path\": \"<string>\"\n  },\n  \"create_time\": \"<long>\",\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"api_version\": \"<string>\",\n  \"credit_card\": {\n    \"card_holder\": {\n      \"holder_name\": \"<string>\",\n      \"address\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"email\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"phone\": {\n        \"country_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"phone_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"expiration_month\": \"<integer>\",\n    \"expiration_year\": \"<integer>\",\n    \"card_on_file\": \"<boolean>\",\n    \"recurring\": \"<boolean>\",\n    \"cvv_provided\": \"<boolean>\",\n    \"auto_update\": \"<boolean>\",\n    \"backing_display_name\": \"<string>\",\n    \"bin\": \"<string>\",\n    \"card_brand\": \"<string>\",\n    \"card_entry_type\": \"<string>\",\n    \"display_name\": \"<string>\",\n    \"last_four\": \"<string>\",\n    \"virtual_terminal_mode\": \"<string>\"\n  },\n  \"custom_data\": {\n    \"fugiatf15\": \"consequat culpa nisi\"\n  },\n  \"payment_bank_us\": {\n    \"account_type\": \"<string>\",\n    \"last_four\": \"<string>\",\n    \"account_holder\": {\n      \"holder_name\": \"<string>\",\n      \"address\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"email\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"phone\": {\n        \"country_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"phone_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    }\n  }\n}"
+				},
+				{
+					"id": "78aa71fb-a37e-424e-ad0e-98e92ced1926",
+					"name": "INVALID_PARAMS, MERCHANT_ACCOUNT_CANNOT_ACCEPT_PAYMENTS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "Api-Version",
+								"value": "3.0"
+							},
+							{
+								"key": "Unique-Key",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "WePay-Risk-Token",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "Client-IP",
+								"value": "eu quis consequat"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"google_pay\": {\n    \"payment_method_data\": \"fjwfhkdjsfjkdsnfj\",\n    \"card_holder\": {\n      \"address\": {\n        \"country\": \"US\",\n        \"postal_code\": \"94025\"\n      },\n      \"email\": \"example@wepay.com\",\n      \"holder_name\": \"John Snow\"\n    }\n  },\n  \"custom_data\": {\n    \"my_key\": \"invoice #54321\"\n  },\n  \"type\": \"google_pay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/payment_methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payment_methods"
+							]
+						},
+						"description": "The POST /payment_methods call allows your platform to create a payment method. Payment methods represent payment data like credit cards and bank accounts, and allow your platform to charge and accept money from a payer."
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error_code\": \"<string>\",\n  \"error_message\": \"<string>\",\n  \"details\": [\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    },\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"id": "cc2c5d85-68f7-450d-b13b-ab1abd60ab43",
+					"name": "NOT_AUTHORIZED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "Api-Version",
+								"value": "3.0"
+							},
+							{
+								"key": "Unique-Key",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "WePay-Risk-Token",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "Client-IP",
+								"value": "eu quis consequat"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"google_pay\": {\n    \"payment_method_data\": \"fjwfhkdjsfjkdsnfj\",\n    \"card_holder\": {\n      \"address\": {\n        \"country\": \"US\",\n        \"postal_code\": \"94025\"\n      },\n      \"email\": \"example@wepay.com\",\n      \"holder_name\": \"John Snow\"\n    }\n  },\n  \"custom_data\": {\n    \"my_key\": \"invoice #54321\"\n  },\n  \"type\": \"google_pay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/payment_methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payment_methods"
+							]
+						},
+						"description": "The POST /payment_methods call allows your platform to create a payment method. Payment methods represent payment data like credit cards and bank accounts, and allow your platform to charge and accept money from a payer."
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error_code\": \"<string>\",\n  \"error_message\": \"<string>\",\n  \"details\": [\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    },\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"id": "74edce1c-6b44-4161-a4a4-cf439c97b610",
+					"name": "UNEXPECTED_ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "Api-Version",
+								"value": "3.0"
+							},
+							{
+								"key": "Unique-Key",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "WePay-Risk-Token",
+								"value": "eu quis consequat"
+							},
+							{
+								"description": "This header is **required** when tokenizing Payment Methods, Legal Entities, and Payout Methods **when the [tokenization JS library](/sdks-and-libraries/helper-js/) is not being used.** ",
+								"key": "Client-IP",
+								"value": "eu quis consequat"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"google_pay\": {\n    \"payment_method_data\": \"fjwfhkdjsfjkdsnfj\",\n    \"card_holder\": {\n      \"address\": {\n        \"country\": \"US\",\n        \"postal_code\": \"94025\"\n      },\n      \"email\": \"example@wepay.com\",\n      \"holder_name\": \"John Snow\"\n    }\n  },\n  \"custom_data\": {\n    \"my_key\": \"invoice #54321\"\n  },\n  \"type\": \"google_pay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/payment_methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payment_methods"
+							]
+						},
+						"description": "The POST /payment_methods call allows your platform to create a payment method. Payment methods represent payment data like credit cards and bank accounts, and allow your platform to charge and accept money from a payer."
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error_code\": \"<string>\",\n  \"error_message\": \"<string>\",\n  \"details\": [\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    },\n    {\n      \"target\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reason_code\": \"<string>\",\n      \"message\": \"<string>\",\n      \"target_type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "App-Id",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "ac230c12-25f8-498e-9cdc-9e8a4808d06d",
+			"key": "baseUrl",
+			"value": "https://stage-api.wepay.com",
+			"type": "string"
+		}
+	]
+}
